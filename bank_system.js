@@ -26,7 +26,7 @@ class BankSystem{
     deposit(jumlah){
         try {
             if(Number.isInteger(jumlah)){
-                if(jumlah==0){
+                if(jumlah!=0){
                     this.saldo+=jumlah;
                     alert(`Berhasil deposit saldo berjumlah ${jumlah}`);
                 }else{
