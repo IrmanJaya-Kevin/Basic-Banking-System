@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+  
+  </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+<body style="background-color: gray;">
+
+<center>
+  <h1>Bank Account</h1><br><br>
+  <h4>Pilih/Klik Tombol</h4>
+  <button onclick="tambahSaldo()">Tambah Saldo</button>
+  <button onclick="kurangiSaldo()">Kurang Saldo</button>
+  <button onclick="cekSaldo()">Cek Saldo</button>
+  <br><br>
+
+  <h2>History Transaksi</h2>
+  <table id="tableHistory">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Waktu Transaksi</th>
+        <th>Jumlah</th>
+        <th>Jenis</th>
+      </tr>
+  </thead>
+    <tbody id="history">
+   
+  </tbody>
+  </table>
+</center>
+
+
+<script src="bank_account.js"></script>
+
+</body>
+</html>
