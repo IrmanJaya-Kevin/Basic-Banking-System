@@ -14,8 +14,11 @@ class BankSystem {
 			if (jumlah == 0) {
 				throw new Error('Inputan tidak boleh 0');
 			}
+			const saldoHistory=this.saldo;
 			this.saldo -= jumlah;
-			alert(`Berhasil menarik saldo berjumlah ${jumlah}`);
+			setTimeout(function(){
+				alert(`Berhasil menarik saldo berjumlah ${jumlah} dari ${saldoHistory}`);
+			},1500);
 		} catch (err) {
 			alert(err.message);
 		}
@@ -29,7 +32,9 @@ class BankSystem {
 				throw new Error('Inputan tidak boleh 0');
 			}
 			this.saldo += jumlah;
-			alert(`Berhasil deposit saldo berjumlah ${jumlah}`);
+			setTimeout(function(){
+				alert(`Berhasil deposit saldo berjumlah ${jumlah} `);
+			},1500)
 		} catch (err) {
 			alert(err.message);
 		}
@@ -39,8 +44,24 @@ class BankSystem {
 	}
 }
 const objek1 = new BankSystem('IJK', 100000);
-let input = prompt('Masukkan jumlah Saldo : ');
-objek1.withdraw(+input);
-let input1 = prompt('Masukkan jumlah Saldo : ');
-objek1.deposit(+input1);
-objek1.cekSaldo();
+let s=true;
+while(s){
+	alert('1.Withdraw'+'\n'+'2.Deposit'+'\n'+'3.Cek Saldo'+'\n'+'4.END');
+	let pilihan=prompt("Masukkan Nomor Menu : ")
+	if(+pilihan==1){
+		let input = prompt('Masukkan jumlah Saldo : ');
+		setTimeout(objek1.withdraw(+input))
+	}else if(+pilihan==2){
+		let input = prompt('Masukkan jumlah Saldo : ');
+		setTimeout(objek1.deposit(+input))
+	}else if(+pilihan==3){
+		setTimeout(objek1.cekSaldo())
+	}else if(+pilihan==4){
+		s=false;
+	}else{
+		alert('Nomor Menu Tidak Valid!!!')
+	}
+}
+setTimeout(objek1.cekSaldo())
+
+
