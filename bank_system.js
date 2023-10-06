@@ -1,4 +1,4 @@
-class BankSystem {
+class BankAccount {
 	constructor(nama, saldo) {
 		this.saldo = saldo;
 		this.nama = nama;
@@ -43,7 +43,7 @@ class BankSystem {
 		alert(`Saldo ${this.nama} sekarang adalah = ${this.saldo}`);
 	}
 }
-const objek1 = new BankSystem('IJK', 100000);
+const objek1 = new BankAccount('IJK', 100000);
 let s=true;
 while(s){
 	alert('1.Withdraw'+'\n'+'2.Deposit'+'\n'+'3.Cek Saldo'+'\n'+'4.END');
